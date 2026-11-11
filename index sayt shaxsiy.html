@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ULTIMATE GAMES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050914;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 85px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #080f20;
+    border-bottom: 1px solid #12345b;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span, footer span {
+    color: #009dff;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #c5d3e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #00aaff;
+}
+
+.header-btn {
+    padding: 12px 24px;
+    background: #008cff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 620px;
+    padding: 120px 9%;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg, #050914 5%, #050914d9 45%, #05091455),
+    url("https://cdn.cloudflare.steamstatic.com/steam/apps/271590/library_hero.jpg")
+    center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-small {
+    color: #00aaff;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 75px;
+    line-height: 1.05;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #009dff;
+    text-shadow: 0 0 25px #008cff;
+}
+
+.hero p {
+    color: #a9bbd3;
+    line-height: 1.8;
+    margin: 25px 0;
+    max-width: 480px;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #008cff;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.main-btn:hover {
+    background: #0065c4;
+    box-shadow: 0 0 25px #008cff;
+}
+
+section {
+    padding: 80px 7%;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading p {
+    color: #009dff;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin-top: 12px;
+}
+
+.section-heading span {
+    color: #009dff;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.game-card {
+    background: #0c1729;
+    border: 1px solid #172d4a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: #009dff;
+    box-shadow: 0 0 25px #008cff35;
+}
+
+.game-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.game-info {
+    padding: 22px;
+}
+
+.game-info small {
+    color: #009dff;
+    letter-spacing: 2px;
+}
+
+.game-info h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.game-info a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.features {
+    background: #080f1d;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature {
+    padding: 35px;
+    background: #0d1b30;
+    border: 1px solid #18385c;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.feature:hover {
+    border-color: #009dff;
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    color: #00aaff;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    color: #a9bbd3;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 55px 20px;
+    text-align: center;
+    background: #030710;
+}
+
+footer h2 {
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+footer p {
+    margin-top: 15px;
+    color: #8296b1;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+@media(max-width: 950px) {
+    .games {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        height: auto;
+        padding: 22px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .games, .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 90px 7%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ULTIMATE<span>GAMES</span></div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#features">FEATURES</a>
+        <a href="#about">ABOUT</a>
+    </nav>
+    <a href="#games" class="header-btn">EXPLORE</a>
+</header>
+
+<div class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-small">WELCOME TO THE GAMING UNIVERSE</div>
+        <h1>DISCOVER<br><span>NEW WORLDS</span><br>OF GAMING</h1>
+        <p>
+            Explore legendary games, discover amazing characters,
+            outfits, skins, screenshots and gaming universes.
+        </p>
+        <a href="#games" class="main-btn">EXPLORE GAMES ↗</a>
+    </div>
+</div>
+
+<section id="games">
+
+    <div class="section-heading">
+        <p>OUR COLLECTION</p>
+        <h2>POPULAR <span>GAMES</span></h2>
+    </div>
+
+    <div class="games">
+
+        <div class="game-card">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/library_600x900.jpg" alt="GTA V">
+            <div class="game-info">
+                <small>ACTION / OPEN WORLD</small>
+                <h3>Grand Theft Auto V</h3>
+                <a href="https://www.rockstargames.com/gta-v">VIEW GAME ↗</a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/570/library_600x900.jpg" alt="Dota 2">
+            <div class="game-info">
+                <small>MOBA / STRATEGY</small>
+                <h3>Dota 2</h3>
+                <a href="https://www.dota2.com/">VIEW GAME ↗</a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_600x900.jpg" alt="Cyberpunk">
+            <div class="game-info">
+                <small>RPG / SCI-FI</small>
+                <h3>Cyberpunk 2077</h3>
+                <a href="https://www.cyberpunk.net/">VIEW GAME ↗</a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/library_600x900.jpg" alt="CS2">
+            <div class="game-info">
+                <small>FPS / COMPETITIVE</small>
+                <h3>Counter-Strike 2</h3>
+                <a href="https://www.counter-strike.net/">VIEW GAME ↗</a>
+            </div>
+        </div>
+
+        <!-- FREE FIRE MAX -->
+        <div class="game-card">
+            <img src="images/freefire.png" alt="Free Fire MAX">
+            <div class="game-info">
+                <small>BATTLE ROYALE</small>
+                <h3>Free Fire MAX</h3>
+                <a href="https://ff.garena.com/">VIEW GAME ↗</a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/2344520/library_600x900.jpg" alt="Fortnite">
+            <div class="game-info">
+                <small>BATTLE ROYALE</small>
+                <h3>Fortnite</h3>
+                <a href="https://www.fortnite.com/">VIEW GAME ↗</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="section-heading">
+        <p>EXPLORE EVERYTHING</p>
+        <h2>GAMING <span>UNIVERSE</span></h2>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>🎮 GAME DETAILS</h3>
+            <p>Games tarixi, janri, ishlab chiqaruvchisi va batafsil ma'lumotlar.</p>
+        </div>
+        <div class="feature">
+            <h3>👕 SKINS & OUTFITS</h3>
+            <p>Personajlar, kiyimlar va kosmetik kolleksiyalar.</p>
+        </div>
+        <div class="feature">
+            <h3>🌌 3D SHOWCASE</h3>
+            <p>Personajlar va o'yin buyumlarining 3D ko'rinishlari.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="about">
+    <h2>ULTIMATE<span>GAMES</span></h2>
+    <p>YOUR WORLD. YOUR GAMES. YOUR UNIVERSE.</p>
+    <p>© 2026 ULTIMATE GAMES</p>
+</footer>
+
+</body>
+</html>
